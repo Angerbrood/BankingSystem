@@ -1,10 +1,16 @@
-var userAuthenticaton = new function (id, username, password, role, enabled) {
-    this.id = id;
-    this.username = username;
-    this.password = password;
-    this.role = role;
-    this.enabled = enabled;
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/banking_system');
 
-};
+var Schema = mongoose.Schema;
 
-module.exports = userAuthenticaton;
+var userAuthSchema = new Schema({
+    username : { type : String, required : true, unique: true },
+    password : { type : String, required : true },
+    role : { type : String, required : true },
+    enabled : { type : String, required : true }
+});
+
+
+var UserAuthentication = mongoose.model('UserAuthentication', userAuthSchema);
+
+module.exports = UserAuthentication;

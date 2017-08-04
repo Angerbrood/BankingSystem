@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Banking System - Transaction</title>
+    <title>Banking System - Modify Personal Data</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -182,13 +182,21 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        Transaction
+                        Modify Personal Data
                     </h1>
-                    <form action="/transaction/newtransaction" method="get">
-                        <input class="btn btn-default" type="submit" value="New Transaction">
-                    </form>
-                    <form action="/transaction/viewtransactions" method="get">
-                        <input class="btn btn-default" type="submit" value="View Previous Transactions">
+                    <form>
+                        <label for="payerId">Player id</label>
+                        <input type="text" id="payerId" class="form-control" >
+                        <label for="payeeId">Payee id</label>
+                        <input type="text" id="payeeId" class="form-control"  >
+                        <label for="amount">Amount</label>
+                        <input type="text" id="amount" class="form-control"  >
+                        <label for="type">Type</label>
+                        <input type="text" id="type" class="form-control"  >
+                        <label for="description">Description</label>
+                        <input type="text" id="description" class="form-control"  >
+                        <br>
+                        <input class="btn btn-default" type="submit" value="Save" style="float: right;">
                     </form>
                 </div>
             </div>

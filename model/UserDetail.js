@@ -1,10 +1,17 @@
-var userDetail = new function (id, name, address, city, email, dateOfBirth) {
-    this.id = id;
-    this.name = name;
-    this.address = address;
-    this.city = city;
-    this.email = email;
-    this.dateOfBirth = dateOfBirth;
-};
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/banking_system');
 
-module.exports = userDetail;
+var Schema = mongoose.Schema;
+
+var userDetailSchema = new Schema({
+    name : { type : String, required : true },
+    address : { type : String, required : true },
+    city : { type : String, required : true },
+    email : { type : String, required : true },
+    dateOfBirth: {type : String, required: true}
+});
+
+
+var UserDetail = mongoose.model('UserDetail', userDetailSchema);
+
+module.exports = UserDetail;

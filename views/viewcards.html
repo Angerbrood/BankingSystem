@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Banking System - Transaction</title>
+    <title>Banking System - View Credit Cards</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -182,14 +182,25 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        Transaction
+                        View My Credit Cards
                     </h1>
-                    <form action="/transaction/newtransaction" method="get">
-                        <input class="btn btn-default" type="submit" value="New Transaction">
+                    <form>
+                        <select class="form-control">
+                            <option>Card 1</option>
+                            <option>Card 2</option>
+                        </select>
+                        <br>
+                        <input class="btn btn-default" type="submit" value="Submit" style="float: right;">
                     </form>
-                    <form action="/transaction/viewtransactions" method="get">
-                        <input class="btn btn-default" type="submit" value="View Previous Transactions">
-                    </form>
+                </div>
+                <!-- This will be a hidden div  !-->
+                <div id="cardDetails">
+                    <label for="cardNumber">Card Number</label>
+                    <input id="cardNumber" class="form-control" type="text" disabled readonly>
+                    <label for="cardExpire">Expires</label>
+                    <input id="cardExpire" class="form-control" type="text" disabled readonly>
+                    <label for="moneyOnCard">Card Balance</label>
+                    <input id="moneyOnCard" class="form-control" type="text" disabled readonly>
                 </div>
             </div>
             <!-- /.row -->

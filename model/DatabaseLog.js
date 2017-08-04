@@ -1,9 +1,15 @@
-var databaseLog = new function (id, activity, userId, details, date) {
-    this.id = id;
-    this.activity = activity;
-    this.userId = userId;
-    this.details = details;
-    this.date = date;
-};
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/banking_system');
 
-module.exports = databaseLog;
+var Schema = mongoose.Schema;
+
+var databaseLogSchema = new Schema({
+    activity : { type : String, required: true },
+    userId :  { type : String, required: true },
+    details: { type: String, required: true },
+    date: {type: String, required: true }
+});
+
+var DatabaseLog = mongoose.model('DatabaseLog', databaseLogSchema);
+
+module.exports = DatabaseLog;
